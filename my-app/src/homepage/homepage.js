@@ -11,7 +11,7 @@ function Homepage() {
                 <h2>About Us</h2>
                 <p>TechNeverDies is committed to revolutionizing the way we handle electronic waste by promoting sustainability and responsible recycling practices.<br/> As a dedicated e-waste recycling company, our mission is to reduce environmental impact by providing individuals and businesses<br/>with an easy and efficient way to recycle outdated or unused electronics. We believe that no tech should ever truly "die," and by <br/>repurposing materials, we aim to give them a second life while conserving natural resources</p>
                 <p>Total e-waste recycled: <strong>9,654 kg</strong></p>
-                <button className="donate">Donate</button>
+                <button className="donate action-button">Donate</button>
             </section>
             <section id="products">
                 <h2>Shop by Category</h2>

@@ -21,6 +21,12 @@
     padding-left: 6%;
 }
 
+.cart-item-quantity{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .cart-item-quantity-price {
     display:flex;
     flex-direction: column;
@@ -68,15 +74,4 @@
     width: 60px;
     padding: 5px;
     margin-left: 10px;
-}
-.checkout-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #28a745;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.checkout-button:hover {
-    background-color: #218838;
 }
