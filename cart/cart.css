@@ -3,25 +3,32 @@
 .container {
     display: flex;
     flex-direction: column;
-    max-width: 1600px;
+    max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
 }
 
-.item {
+.cart-item {
     display: flex;
     flex-direction: row;
     flex: 1 1 0px;
 }
 
-
-.cart-item-image, .cart-item-details {
-    flex: 0 0 50%;
+.cart-item-image {
+    flex: 0 0 20%
 }
 
-.item-image {
-    max-width: 200px;
-    height:auto;
+.cart-item-details {
+    flex: 0 0 80%;
+}
+
+.item-image img {
+    max-width: 80%;
+    height: auto;
+}
+
+.cart-item-details {
+
 }
