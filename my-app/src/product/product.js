@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="item.css">
-    <title>Product Page</title>
-</head>
-<body>
-    <div class="container">
+import './product.css';
+
+function Product() {
+    return(<div class="container">
         <ul class="breadcrumb">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../store.html">Computers</a></li>
+            <li><a href="../">Home</a></li>
+            <li><a href="../store">Computers</a></li>
             <li>Macbook Air M3</li>
         </ul>
     <div class="product">
         <section class="product-section">
             <div class="product-image">
-                <img src="../data/images/apple macbook air m3.jpg" alt="Product Image">
+                <img src={require("../data/images/apple macbook air m3.jpg")} alt="Product Image"/>
             </div>
         </section>
 
@@ -43,7 +37,7 @@
         
             <div class="quantity-section">
                 <form>
-                    <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    <input type="number" id="quantity" name="quantity" min="1" value="1"/>
                     <button type="submit">Add to Cart</button>
                 </form>
             </div>
@@ -61,6 +55,7 @@
                 </div>
             </div>
         </section>
-    </div>
-</body>
-</html>
+    </div>)
+}
+
+export default Product;
