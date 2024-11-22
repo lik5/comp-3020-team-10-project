@@ -1,33 +1,15 @@
+@import url("../global.css");
+
+.logo {
+    width:245px;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: left;
 }
-.nav-tabs {
-    display: flex;
-    justify-content: flex-start;
-    margin: 20px 0 20px 20px;
-}
-.nav-tabs button {
-    padding: 10px 20px;
-    border: 1px solid black;
-    border-right: none;
-    background-color: white;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-.nav-tabs button:last-child {
-    border-right: 1px solid black;
-}
-.nav-tabs button:hover {
-    background-color: lightgray;
-}
-.nav-tabs button.active {
-    background-color: black;
-    color: white;
-}
+
 header {
     text-align: center;
     margin-bottom: 20px;

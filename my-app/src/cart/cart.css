@@ -53,7 +53,7 @@
     margin-bottom: 20px;
     background-color: #99e5ab;
     border: 1px solid #ddd;
-    border-radius 8px;
+    border-radius: 8px;
 }
 
 .cart-total-price {
@@ -64,20 +64,19 @@
     padding-right: 10%
 }
 
-input[type="number"] {
+.input[type="number"] {
     width: 60px;
     padding: 5px;
     margin-left: 10px;
 }
-button {
+.checkout-button {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #28a745;
-    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
-button:hover {
+.checkout-button:hover {
     background-color: #218838;
 }
