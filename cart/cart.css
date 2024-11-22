@@ -11,5 +11,17 @@
 }
 
 .item {
-    
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 0px;
+}
+
+
+.cart-item-image, .cart-item-details {
+    flex: 0 0 50%;
+}
+
+.item-image {
+    max-width: 200px;
+    height:auto;
 }
