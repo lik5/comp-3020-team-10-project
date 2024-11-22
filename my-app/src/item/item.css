@@ -21,6 +21,7 @@
 
 .product-details {
     align-self: center;
+    padding: 20px;
 }
 
 .product-header {
@@ -40,6 +41,7 @@
 }
 .product-description {
     margin-top: 20px;
+    font-size: medium;
 }
 .product-components {
     margin-top: 20px;
@@ -47,6 +49,7 @@
 .quantity-section, .review-section {
     margin-top: 20px;
     padding-right:20px;
+    text-align: center;
 }
 
 input[type="number"] {
@@ -76,4 +79,5 @@ button:hover {
 }
 ul {
     padding-left: 20px;
+    list-style: none;
 }
