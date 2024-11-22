@@ -17,7 +17,8 @@
 }
 
 .cart-item-image {
-    flex: 0 0 20%
+    flex: 0 0 20%;
+    padding-left: 6%;
 }
 
 .cart-item-quantity-price {
@@ -31,12 +32,12 @@
     flex: 0 0 80%;
 }
 
-.item-image img {
+.cart-item-image img {
     max-width: 80%;
     height: auto;
 }
 
-.item-price {
+.cart-item-price {
     text-align: right;
 }
 
@@ -44,12 +45,23 @@
     text-align: right;
 }
 
-.cart-total-price {
-    padding-right: 16%;
+.cart-e-waste-recycled {
+    text-align: center;;
+    max-width: 50%;
+    margin-left: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #99e5ab;
+    border: 1px solid #ddd;
+    border-radius 8px;
 }
 
-.checkout-button {
-    padding-right: 16%
+.cart-total-price {
+    padding-right: 10%;
+}
+
+.cart-checkout-button {
+    padding-right: 10%
 }
 
 input[type="number"] {
