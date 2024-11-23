@@ -131,6 +131,11 @@ font-weight: bold;
 font-size: 20px;
 }
 .product-description{
-font-size: medium;
-color: green;
+    font-size: 13px;
+    color: rgb(73, 73, 73);
+}
+.product-description.special{
+    
+    font-size: 13px;
+    color: green;
 }
