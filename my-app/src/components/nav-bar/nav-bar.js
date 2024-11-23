@@ -4,7 +4,20 @@ import { useState } from 'react';
 
 function NavBar() {
     let navigate = useNavigate();
-    const [toggle, setToggle] = useState(1);
+    const url = window.location.href;
+
+    function getToggleState(url) {
+        const objInfo = url.split("http://localhost:3000/");
+        if (objInfo.length < 2) {
+            return 1;
+        } else if (objInfo[1].includes("cart")) {
+            return 3;
+        } else {
+            return 2;
+        }
+    }
+
+    const [toggle, setToggle] = useState(getToggleState(url));
 
     function updateToggle(id) {
         setToggle(id);

@@ -10,11 +10,7 @@ function Cart() {
                 </div>
                 <div class="cart-items">
                     <div class="cart-item">
-                        <section class="cart-item-image">
-                            <div class="cart-item-image">
-                                <img src={require("../data/images/apple macbook air m3.jpg")} alt="Product"/>
-                            </div>
-                        </section>
+                        <img className="cart-item-image" src={require("../data/images/apple macbook air m3.jpg")} alt="Product"/>
                         <section class="cart-item-details">
                             <div class="cart-item-header">
                                 <h1>Apple Macbook Air M3</h1>

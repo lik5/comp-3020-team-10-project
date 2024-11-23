@@ -195,12 +195,12 @@ function Product() {
     const url = window.location.href;
     
     function getObjName(url) {
-        const objInfo = url.split("/");
+        const objInfo = url.split('?')[0].split("/");
         return objInfo[objInfo.length - 1].replace(/-/g, " ");
     }
 
     function getObjType(url) {
-        const objInfo = url.split("/");
+        const objInfo = url.split('?')[0].split("/");
         return objInfo[objInfo.length - 2].replace(/-/g, " ");
     }
 
@@ -270,7 +270,8 @@ function Product() {
                     </div>
                 </div>
             </section>
-        </div>)
+        </div>
+    )
 }
 
 export default Product;

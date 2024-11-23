@@ -18,7 +18,9 @@
 
 .cart-item-image {
     flex: 0 0 20%;
-    padding-left: 6%;
+    border: none;
+    border-radius: 20px;
+    height: 200px;
 }
 
 .cart-item-quantity{
