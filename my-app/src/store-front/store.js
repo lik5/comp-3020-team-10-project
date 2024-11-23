@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 function Store() {
     let navigate = useNavigate();
-    const navigateTo = (path) => {
-        navigate("/"+path);
+    function navigateTo(type, name) {
+        navigate("/product/"+type+"/"+name);
     }
 
     return(   
@@ -37,10 +37,10 @@ function Store() {
 
 
         <div className="product-grid">
-            <div className="grid-item" onClick={()=>navigateTo("product")}>
+            <div className="grid-item" onClick={()=>navigateTo("computers", "apple-macbook-air-m3")}>
                 <div className="test-img"></div>
                 <div className="product-info">
-                    <div className="product-name">Apple Macbook Pro M3</div>
+                    <div className="product-name">Apple Macbook Air M3</div>
                     <div className="product-description">Renewed</div>
                     <div className="price-normal">$1299.99</div>
                 </div>
