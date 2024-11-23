@@ -38,10 +38,12 @@ function Store() {
 
         <div className="product-grid">
             <div className="grid-item" onClick={()=>navigateTo("computers", "apple-macbook-air-m3")}>
-                <div className="test-img"></div>
+                <div className="test-img">
+                    <img src={require("../data/images/apple macbook air m3.jpg")} alt="Product"/>
+                </div>
                 <div className="product-info">
                     <div className="product-name">Apple Macbook Air M3</div>
-                    <div className="product-description">Renewed</div>
+                    <div className="product-description special">Renewed</div>
                     <div className="price-normal">$1299.99</div>
                 </div>
             </div>
@@ -73,7 +75,7 @@ function Store() {
                 <div className="test-img"></div>
                 <div className="product-info">
                     <div className="product-name">iPhone Pro</div>
-                    <div className="product-description">Replaced with recycled parts </div>
+                    <div className="product-description special">Replaced with <strong>TND</strong> recycled materials <br/> <strong>(45% recycled parts)</strong></div>
                     <div className="price-normal">$320.76</div>
 
                 </div>
