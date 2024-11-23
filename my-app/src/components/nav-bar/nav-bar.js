@@ -14,7 +14,7 @@ function NavBar() {
         </div>
         <div className='nav-tabs'>
             <button onClick={() => navigateTo("")}>Home</button>
-            <button onClick={() => navigateTo("store/all")} >Products</button>
+            <button onClick={() => navigateTo("store")} >Products</button>
             <button onClick={() => navigateTo("cart")}>Cart</button>
         </div>
     </div>)

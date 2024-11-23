@@ -13,7 +13,7 @@ function App() {
             <NavBar/>
             <Routes>
                 <Route path="/" Component={Homepage} />
-                <Route path='/store/:type' Component={Store} />
+                <Route path='/store' Component={Store} />
                 <Route path="/cart" Component={Cart}/>
                 <Route path="/product/:type/:name" Component={Product}/>
             </Routes>

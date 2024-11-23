@@ -223,7 +223,7 @@ function Product() {
 
     return(
         <div className="container">
-            <Breadcrumb links={{type: type, name: obj.name}}/>
+            <Breadcrumb links={{type: type.charAt(0).toUpperCase()+type.slice(1), name: obj.name}}/>
             <div className="product">
                 <section className="product-section">
                     <div className="product-image">
