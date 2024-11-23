@@ -15,7 +15,7 @@ function App() {
                 <Route path="/" Component={Homepage} />
                 <Route path='/store' Component={Store} />
                 <Route path="/cart" Component={Cart}/>
-                <Route path="/product" Component={Product}/>
+                <Route path="/product/:type/:name" Component={Product}/>
             </Routes>
         </BrowserRouter>
     </div>
