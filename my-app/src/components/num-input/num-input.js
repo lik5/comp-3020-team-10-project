@@ -18,9 +18,9 @@ function NumInput() {
 
     return (
     <div className="quantity-wrapper">
-      <button className="quantity-btn" onClick={(event) => incrementCount(event)}>+</button>
-      <input type="number" id="quantity-input" min="1" value={count} onChange={(event)=> setCount(event.target.value)}/>
       <button disabled = {disable} className="quantity-btn" onClick={(event) => decrementCount(event)}>-</button>
+      <input type="number" id="quantity-input" min="1" value={count} onChange={(event)=> setCount(event.target.value)}/>
+      <button className="quantity-btn" onClick={(event) => incrementCount(event)}>+</button>
     </div>)
 }
 
