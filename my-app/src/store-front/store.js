@@ -7,13 +7,43 @@ function Store() {
         navigate("/product/"+type+"/"+name);
     }
 
+    // the tabs
+    function displayAll(event) {
+        const tabs = document.getElementsByClassName("tab");
+        for (let i=0; i < tabs.length; i++)
+            tabs[i].className = "tab";
+        event.currentTarget.className += " active";
+    
+    }
+    function displayTVs (event){
+        const tabs = document.getElementsByClassName("tab");
+        for (let i=0; i < tabs.length; i++)
+            tabs[i].className = "tab";
+        event.currentTarget.className += " active";
+    
+    }
+    function displayComputers(event){
+        const tabs = document.getElementsByClassName("tab");
+        for (let i=0; i < tabs.length; i++)
+            tabs[i].className = "tab";
+        event.currentTarget.className += " active";
+        
+    }
+    function displayPhones(event) {
+        const tabs = document.getElementsByClassName("tab");
+        for (let i=0; i < tabs.length; i++)
+            tabs[i].className = "tab";
+        event.currentTarget.className += " active";
+    
+    }
+
     return(   
     <div className="outer-grid">
         <div className="button-tabs">
-            <button className="tab active" onclick="displayAll(event)">All</button>
-            <button className="tab" onclick="displayTVs(event)">TVs</button>
-            <button className="tab" onclick="displayComputers(event)">Computers</button>
-            <button className="tab" onclick="displayPhones(event)">Phones</button>
+            <button className="tab active" onClick={(event) => displayAll(event)}>All</button>
+            <button className="tab" onClick={(event) => displayTVs(event)}>TVs</button>
+            <button className="tab" onClick={(event) => displayComputers(event)}>Computers</button>
+            <button className="tab" onClick={(event) => displayPhones(event)}>Phones</button>
         </div>
 
         <div className="filters">
