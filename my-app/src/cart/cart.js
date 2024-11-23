@@ -1,4 +1,5 @@
 import './cart.css';
+import NumInput from '../components/num-input/num-input';
 
 function Cart() {
     return(
@@ -11,7 +12,7 @@ function Cart() {
                     <div class="cart-item">
                         <section class="cart-item-image">
                             <div class="cart-item-image">
-                                <img src={require("../data/images/apple macbook air m3.jpg")} alt="Product Image"/>
+                                <img src={require("../data/images/apple macbook air m3.jpg")} alt="Product"/>
                             </div>
                         </section>
                         <section class="cart-item-details">
@@ -19,12 +20,10 @@ function Cart() {
                                 <h1>Apple Macbook Air M3</h1>
                             </div>
                             <div class="cart-item-quantity-price">
-                                <div class="cart-item-quantity">
-                                    <form>
-                                        <label for="quantity">Quantity:</label>
-                                        <input type="number" id="quantity" name="quantity" min="1" value="1"/>
-                                    </form>
-                                </div>
+                                <form class="cart-item-quantity">
+                                    <label for="quantity">Quantity:</label>
+                                    <NumInput />
+                                </form>
                                 <div class="cart-item-price">
                                     <h2>$1299.99</h2>
                                 </div>
@@ -42,7 +41,7 @@ function Cart() {
                         <h2>Total: $1299.99</h2>
                     </div>
                     <div class="cart-checkout-button">
-                        <button className="checkout-button" type="checkout">Checkout</button>
+                        <button className="checkout-button action-button" type="checkout">Checkout</button>
                     </div>
                 </div>
                 
