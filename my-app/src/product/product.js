@@ -1,6 +1,8 @@
 import './product.css';
 import NumInput from '../components/num-input/num-input';
 import Breadcrumb from '../components/breadcrumb/breadcrumb';
+import Textcard from '../components/textcard/textcard';
+import { useState } from 'react';
 
 const data = {
     "computers": [
@@ -13,7 +15,8 @@ const data = {
             "batteryLife": "Up to 18 hours",
             "weight": "2.7 pounds",
             "description": "The latest iteration of Apple's ultra-portable laptop, combining a sleek design with cutting-edge performance powered by the next-generation M3 chip. The M3 chip starts the next generation of Apple silicon, with even more speed and power efficiency. You can work with more streams of 4K and 8K ProRes video with the high‑performance media engine, and keep working — or playing — all day and into the night with up to 18 hours of battery life.",
-            "price": "$1299.99"
+            "price": "$1299.99",
+            "reviews": ["The M3 chip delivers a significant boost in speed and efficiency", "The best ultraportable laptop out there"]
         },
         {
             "name": "Asus Zenbook 14 OLED (UM3406)",
@@ -116,7 +119,8 @@ const data = {
         "batteryLife": "Up to 25 hours",
         "weight": "8.3 ounces",
         "description": "The Samsung Galaxy S24 Ultra is the ultimate powerhouse in Samsung’s flagship lineup, combining cutting-edge technology, premium design, and industry-leading performance.",
-        "price": "$1199.99"
+        "price": "$1199.99",
+        "reviews": []
         },
         {
         "name": "Google Pixel 9 Pro",
@@ -223,6 +227,31 @@ function Product() {
     const type = getObjType(url);
     const obj = getObj(type, name);
 
+    function getReviews(obj) {
+        var reviews = [];
+
+        for (var i = 0; i < obj.reviews.length; i++) {
+            reviews[i] = <Textcard review={{text: obj.reviews[i]}}/>
+        }
+
+        return reviews;
+    }
+
+    const [reviews, setReviews] = useState(getReviews(obj));
+    const [text, setText] = useState('');
+
+    function handleChange(event){
+        event.preventDefault();
+        setText(event.target.value);
+    }
+
+    function addReview(event) {
+        event.preventDefault();
+        var newReviews = reviews.slice();
+        newReviews.push(<Textcard review={{text: text}}/>);
+        setReviews(newReviews);
+    }
+
     return(
         <div className="container">
             <Breadcrumb links={{type: type.charAt(0).toUpperCase()+type.slice(1), name: obj.name}}/>
@@ -260,18 +289,16 @@ function Product() {
                     </form>
                 </section>
             </div>
-            <section>
-                <div className="review-section">
-                    <h2>Leave a Review</h2>
-                    <form>
-                        <textarea id="review" name="review" placeholder="Write your review here..."></textarea>
-                        <button className="action-button" type="submit">Submit Review</button>
-                    </form>
-                    <div className="reviews">
-
-                    </div>
+            <div className="review-section">
+                <h2>Leave a Review</h2>
+                <form onSubmit={(event) => addReview(event)}>
+                    <textarea id="review" name="review" placeholder="Write your review here..." onChange={(event) => handleChange(event)}></textarea>
+                    <button className="action-button" type="submit">Submit Review</button>
+                </form>
+                <div className="reviews">
+                    {reviews}
                 </div>
-            </section>
+            </div>
         </div>
     )
 }
