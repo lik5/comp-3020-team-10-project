@@ -7,8 +7,8 @@ function NavBar() {
     const url = window.location.href;
 
     function getToggleState(url) {
-        const objInfo = url.split("http://localhost:3000/");
-        if (objInfo.length < 2) {
+        const objInfo = url.split("http://localhost:3000");
+        if (objInfo.length < 2 || objInfo[1] === "/") {
             return 1;
         } else if (objInfo[1].includes("cart")) {
             return 3;

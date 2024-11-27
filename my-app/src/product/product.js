@@ -114,7 +114,9 @@ const data = {
         "storage": "256 GB",
         "display": "6.8-inch Dynamic AMOLED 2X",
         "batteryLife": "Up to 25 hours",
-        "weight": "8.3 ounces"
+        "weight": "8.3 ounces",
+        "description": "The Samsung Galaxy S24 Ultra is the ultimate powerhouse in Samsung’s flagship lineup, combining cutting-edge technology, premium design, and industry-leading performance.",
+        "price": "$1199.99"
         },
         {
         "name": "Google Pixel 9 Pro",
@@ -227,7 +229,7 @@ function Product() {
             <div className="product">
                 <section className="product-section">
                     <div className="product-image">
-                        <img src={require("../data/images/apple macbook air m3.jpg")} alt="Product"/>
+                        <img src={require("../data/images/"+name+".jpg")} alt="Product"/>
                     </div>
                 </section>
 
