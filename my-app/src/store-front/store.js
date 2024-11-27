@@ -33,6 +33,15 @@ function Store() {
         navigate("/product/"+type+"/"+name);
     }
 
+
+    function filterPrice(val){
+        var slider = document.getElementById("price-slider");
+        var textbox = document.getElementById("price-textbox");
+    
+        textbox.value = val;
+        slider.value = val;
+    }
+        
     return(   
     <div className="outer-grid">
         <div className="button-tabs">
@@ -40,23 +49,55 @@ function Store() {
             <button className= {tab === 2 ? 'tab active' : 'tab'} onClick={()=> updateTab(2)}>Computers</button>
             <button className= {tab === 3 ? 'tab active' : 'tab'} onClick={()=> updateTab(3)}>Phones</button>
         </div>
-
+        <div className="empty"></div>
         <div className="filters">
-            <div className="filter-content">
-                Filters
+            <div className="filter-content"> 
+                <div className="filter-header">Filter</div>
                 <ul>
-                    <li>Apple</li>
-                    <li>Samsung</li>
-                    <li>Google</li>
+                    <li><input type="checkbox"/> Apple</li>
+                    <li><input type="checkbox"/> Google</li>
+                    <li><input type="checkbox"/> Lenovo</li>
+                    <li><input type="checkbox"/> Samsung</li>
+                    <li><input type="checkbox"/> TND</li>
+                    <li><input type="checkbox"/> Other</li>
 
                 </ul>
                 
                 <div className="slide-container">
-                    <label for="minPrice">Max Price:</label>
-                    <input type="range" id="maxPrice" min="0" max="1000" value="1000" step="1"/>
-                    <span>$1000</span>
+                    <label for="maxPrice">Max Price:</label>
+                    <input type="range" id="price-slider" onInput={(value) => filterPrice(value)} min="0" max="5000" value="1000" step="1"/>
+                    <input type="text" id="price-textbox" onInput={(value) => filterPrice(value)} value="1000"/>
                 </div>
+
+                <ul>
+                    <li><input type="checkbox"/> TND Recycled</li>
+                    <li><input type="checkbox"/> Renewed</li>
+                    <li><input type="checkbox"/> Used</li>
+                </ul>
             </div>
+
+
+            <div className="ad">
+                <h4>What does TND Recycled mean?</h4>
+                    <p>
+                        <strong>TND Recycled</strong> - some of the parts have been replaced by recycled materials, such as batteries, plastics and glass from screens. 
+                    </p>
+                    <p>TND collects your donated devices, recycles their components, and transforms them into new components helping to reduce waste</p>
+                    <p>
+                        <strong>Renewed</strong> - refers to a used product that have been repaired to working condition. 
+                    </p>
+                    <p>
+                        We replace broken parts with donated parts making it work like brand new again!
+                    </p>
+              
+                    <p>
+                        <strong>Used</strong> - second hand products that do not need replacement parts and guaranteed to work like brand new
+                    </p>
+                    
+                    <h4>Contribute to our website!</h4>
+                    <p>Donate your old items for recycling. We accept anything!</p>
+                    <button>Donate</button>
+                </div>
             
         </div>
 
