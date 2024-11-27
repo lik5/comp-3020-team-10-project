@@ -291,8 +291,8 @@ function Product() {
             </div>
             <div className="review-section">
                 <h2>Leave a Review</h2>
-                <form onSubmit={(event) => addReview(event)}>
-                    <textarea id="review" name="review" placeholder="Write your review here..." onChange={(event) => handleChange(event)}></textarea>
+                <form className="review-form" onSubmit={(event) => addReview(event)}>
+                    <textarea className="review-text" placeholder="Write your review here..." onChange={(event) => handleChange(event)}></textarea>
                     <button className="action-button" type="submit">Submit Review</button>
                 </form>
                 <div className="reviews">
