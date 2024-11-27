@@ -248,7 +248,7 @@ function Product() {
     function addReview(event) {
         event.preventDefault();
         var newReviews = reviews.slice();
-        newReviews.push(<Textcard review={{text: text}}/>);
+        newReviews.unshift(<Textcard review={{text: text}}/>);
         setReviews(newReviews);
     }
 
