@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="./product.css">
+    <link rel="stylesheet" href="../components/num-input/num-input.css">
+</head>
+<body>
+    <div class="container">
+        <div id="breadcrumb"></div>
+        <div class="product">
+            <section class="product-section">
+                <div class="product-image">
+                    <img id="product-image" src="" alt="Product Image">
+                </div>
+            </section>
+
+            <section class="product-details">
+                <div class="product-header">
+                    <h1 id="product-name"></h1>
+                </div>
+                <div class="product-description item-description">
+                    <p id="product-description"></p>
+                </div>
+                <div class="price-normal" id="product-price"></div>
+
+                <div class="product-components">
+                    <h2>Specifications</h2>
+                    <ul id="specifications"></ul>
+                </div>
+            
+                <form class="quantity-section">
+                    <input type="number" id="quantity" min="1" value="1">
+                    <button class="action-button" type="submit">Add to Cart</button>
+                </form>
+            </section>
+        </div>
+
+        <div class="review-section">
+            <h2>Leave a Review</h2>
+            <form id="review-form">
+                <textarea id="review-text" class="review-text" placeholder="Write your review here..."></textarea>
+                <button class="action-button" type="submit">Submit Review</button>
+            </form>
+            <div class="reviews" id="reviews"></div>
+        </div>
+    </div>
+
+    <script src="../components/num-input/num-input.js"></script>
+    <script src="../components/breadcrumb/breadcrumb.js"></script>
+    <script src="./product.js"></script>
+</body>
+</html>

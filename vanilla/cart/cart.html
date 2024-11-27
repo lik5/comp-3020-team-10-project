@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="./cart.css">
+    <link rel="stylesheet" href="../components/num-input/num-input.css">
+</head>
+<body>
+    <div class="container">
+        <div class="cart">
+            <div class="cart-header">
+                <h1>Your Cart</h1>
+            </div>
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img class="cart-item-image" src="../data/images/apple_macbook_air_m3.jpg" alt="Apple Macbook Air M3">
+                    <section class="cart-item-details">
+                        <div class="cart-item-header">
+                            <h1>Apple Macbook Air M3</h1>
+                        </div>
+                        <div class="cart-item-quantity-price">
+                            <form class="cart-item-quantity">
+                                <label for="quantity">Quantity:</label>
+                                <div class="quantity-wrapper">
+                                    <button class="quantity-btn" id="decrement-btn">-</button>
+                                    <input type="number" id="quantity-input" value="1" min="1">
+                                    <button class="quantity-btn" id="increment-btn">+</button>
+                                </div>
+                            </form>
+                            <div class="cart-item-price">
+                                <h2>$1299.99</h2>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <hr />
+                <div class="cart-e-waste-recycled">
+                    <p>Your purchase today is helping to recycle <b>3.5kg</b> of e-waste!</p>
+                </div>
+                <div class="cart-total-price">
+                    <h2>Total: $1299.99</h2>
+                </div>
+                <div class="cart-checkout-button">
+                    <button class="checkout-button action-button" type="button">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../components/num-input/num-input.js"></script>
+    <script src="./cart.js"></script>
+</body>
+</html>
