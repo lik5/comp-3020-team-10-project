@@ -156,11 +156,11 @@ font-weight: bold;
 font-size: 20px;
 }
 .product-description{
-    font-size: 13px;
-    color: rgb(73, 73, 73);
+    font-size: 14px;
+    color: #353535;
 }
 .product-description.special{
     
-    font-size: 13px;
+    font-size: 15px;
     color: green;
 }
