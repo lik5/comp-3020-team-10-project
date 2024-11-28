@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function getToggleState(url) {
         if (url.endsWith('/') || url.endsWith('index.html')) {
             return 'home-button';
-        } else if (url.includes('store/all')) {
+        } else if (url.includes('store.html')) {
             return 'products-button';
-        } else if (url.includes('cart')) {
+        } else if (url.includes('cart.html')) {
             return 'cart-button';
         } else {
             return 'home-button';
@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', (e) => {
             const target = e.target.id;
             if (target === 'home-button') {
-                window.location.href = '/';
+                window.location.href = '../index.html';
             } else if (target === 'products-button') {
-                window.location.href = '/store/all';
+                window.location.href = url.includes('index.html') ? './store/store.html' : '../store/store.html';
             } else if (target === 'cart-button') {
-                window.location.href = '/cart';
+                window.location.href = url.includes('index.html') ? './cart/cart.html' :'../cart/cart.html';
             }
             updateToggle(target);
         });

@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechNeverDies</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./components/nav-bar/nav-bar.css">
 </head>
 <body>
+    <div class="nav-bar">
+        <div class="logo">TechNeverDies</div>
+        <div class="search-box">
+            <input type="search" id="search-bar" name="searchbar" placeholder="Search the store">
+        </div>
+        <div class="nav-tabs">
+            <button class="button active" id="home-button">Home</button>
+            <button class="button" id="products-button">Products</button>
+            <button class="button" id="cart-button">Cart</button>
+        </div>
+    </div>
     <div class="Homepage">
         <header id="home">
             <h1>TechNeverDies</h1>
@@ -27,15 +39,13 @@
         <section id="products">
             <h2>Shop by Category</h2>
             <div class="categories">
-                <button class="category-button" onclick="handleCategoryClick('Shop All')">Shop All</button>
-                <button class="category-button" onclick="handleCategoryClick('TVs')">TVs</button>
-                <button class="category-button" onclick="handleCategoryClick('Computers')">Computers</button>
-                <button class="category-button" onclick="handleCategoryClick('Phones')">Phones</button>
-                <button class="category-button" onclick="handleCategoryClick('Gaming')">Gaming</button>
-                <button class="category-button" onclick="handleCategoryClick('Parts')">Parts</button>
+                <button class="category-button" id='shop-all'>Shop All</button>
+                <button class="category-button" id='shop-computers'>Computers</button>
+                <button class="category-button" id='shop-phones'>Phones</button>
             </div>
         </section>
     </div>
+    <script src="./components/nav-bar/nav-bar.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
