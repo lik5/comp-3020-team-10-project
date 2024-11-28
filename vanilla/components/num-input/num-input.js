@@ -1,39 +1,35 @@
-class NumInput {
-    constructor(wrapperElement, initialValue = 1, minValue = 1) {
-        this.wrapper = wrapperElement;
-        this.input = this.wrapper.querySelector("#quantity-input");
-        this.decrementBtn = this.wrapper.querySelector("#decrement-btn");
-        this.incrementBtn = this.wrapper.querySelector("#increment-btn");
+document.addEventListener('DOMContentLoaded', () => {
+    this.input = this.document.querySelector("#quantity-input");
+    this.decrementBtn = this.document.querySelector("#decrement-btn");
+    this.incrementBtn = this.document.querySelector("#increment-btn");
 
-        this.input.value = initialValue;
-        this.input.min = minValue;
+    this.input.value = 1;
+    this.input.min = 1;
 
-        this.updateButtonsState();
-
-        this.incrementBtn.addEventListener("click", () => this.changeValue(1));
-        this.decrementBtn.addEventListener("click", () => this.changeValue(-1));
-        this.input.addEventListener("input", () => this.validateInput());
-    }
-
-    changeValue(delta) {
+    function changeValue(delta) {
         const newValue = parseInt(this.input.value || 0) + delta;
         if (newValue >= this.input.min) {
             this.input.value = newValue;
-            this.updateButtonsState();
+            updateButtonsState();
         }
     }
 
-    validateInput() {
+    function validateInput() {
         const value = parseInt(this.input.value) || 0;
         if (value < this.input.min) {
             this.input.value = this.input.min;
         }
-        this.updateButtonsState();
+        updateButtonsState();
     }
 
-    updateButtonsState() {
+    function updateButtonsState() {
         this.decrementBtn.disabled = parseInt(this.input.value) <= parseInt(this.input.min);
     }
-}
 
-export default NumInput;
+
+    updateButtonsState();
+
+    this.incrementBtn.addEventListener("click", () => changeValue(1));
+    this.decrementBtn.addEventListener("click", () => changeValue(-1));
+    this.input.addEventListener("input", () => validateInput());
+});

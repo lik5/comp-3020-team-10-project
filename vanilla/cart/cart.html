@@ -6,8 +6,20 @@
     <title>Cart</title>
     <link rel="stylesheet" href="./cart.css">
     <link rel="stylesheet" href="../components/num-input/num-input.css">
+    <link rel="stylesheet" href="../components/nav-bar/nav-bar.css">
 </head>
 <body>
+    <div class="nav-bar">
+        <div class="logo">TechNeverDies</div>
+        <div class="search-box">
+            <input type="search" id="search-bar" name="searchbar" placeholder="Search the store">
+        </div>
+        <div class="nav-tabs">
+            <button class="button active" id="home-button">Home</button>
+            <button class="button" id="products-button">Products</button>
+            <button class="button" id="cart-button">Cart</button>
+        </div>
+    </div>
     <div class="container">
         <div class="cart">
             <div class="cart-header">
@@ -15,7 +27,7 @@
             </div>
             <div class="cart-items">
                 <div class="cart-item">
-                    <img class="cart-item-image" src="../data/images/apple_macbook_air_m3.jpg" alt="Apple Macbook Air M3">
+                    <img class="cart-item-image" src="../images/apple macbook air m3.jpg" alt="Apple Macbook Air M3">
                     <section class="cart-item-details">
                         <div class="cart-item-header">
                             <h1>Apple Macbook Air M3</h1>
@@ -24,14 +36,12 @@
                             <form class="cart-item-quantity">
                                 <label for="quantity">Quantity:</label>
                                 <div class="quantity-wrapper">
-                                    <button class="quantity-btn" id="decrement-btn">-</button>
+                                    <button type="button" class="quantity-btn" id="decrement-btn">-</button>
                                     <input type="number" id="quantity-input" value="1" min="1">
-                                    <button class="quantity-btn" id="increment-btn">+</button>
-                                </div>
+                                    <button type="button" class="quantity-btn" id="increment-btn">+</button>
+                                </div>                                
                             </form>
-                            <div class="cart-item-price">
-                                <h2>$1299.99</h2>
-                            </div>
+                            <span class="item-price price" id="itemPrice"></span>
                         </div>
                     </section>
                 </div>
@@ -41,16 +51,14 @@
                 <div class="cart-e-waste-recycled">
                     <p>Your purchase today is helping to recycle <b>3.5kg</b> of e-waste!</p>
                 </div>
-                <div class="cart-total-price">
-                    <h2>Total: $1299.99</h2>
-                </div>
+                <span class="total-price price" id="totalPrice"></span>
                 <div class="cart-checkout-button">
                     <button class="checkout-button action-button" type="button">Checkout</button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../components/num-input/num-input.js"></script>
+    <script src="../components/nav-bar/nav-bar.js"></script>
     <script src="./cart.js"></script>
 </body>
 </html>

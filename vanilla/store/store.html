@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store</title>
     <link rel="stylesheet" href="store.css">
+    <link rel="stylesheet" href="../components/nav-bar/nav-bar.css">
 </head>
 <body>
+    <div class="nav-bar">
+        <div class="logo">TechNeverDies</div>
+        <div class="search-box">
+            <input type="search" id="search-bar" name="searchbar" placeholder="Search the store">
+        </div>
+        <div class="nav-tabs">
+            <button class="button active" id="home-button">Home</button>
+            <button class="button" id="products-button">Products</button>
+            <button class="button" id="cart-button">Cart</button>
+        </div>
+    </div>
     <div class="outer-grid">
         <div class="button-tabs">
             <button class="tab active" onclick="updateTab(1)">All</button>
@@ -53,5 +65,6 @@
         </div>
     </div>
     <script src="store.js"></script>
+    <script src="../components/nav-bar/nav-bar.js"></script>
 </body>
 </html>
