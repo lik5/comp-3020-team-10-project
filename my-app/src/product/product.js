@@ -15,7 +15,7 @@ const data = {
             "batteryLife": "Up to 18 hours",
             "weight": "2.7 pounds",
             "description": "The latest iteration of Apple's ultra-portable laptop, combining a sleek design with cutting-edge performance powered by the next-generation M3 chip. The M3 chip starts the next generation of Apple silicon, with even more speed and power efficiency. You can work with more streams of 4K and 8K ProRes video with the high‑performance media engine, and keep working — or playing — all day and into the night with up to 18 hours of battery life.",
-            "price": "$1299.99",
+            "price": "$999.99",
             "reviews": ["The M3 chip delivers a significant boost in speed and efficiency", "The best ultraportable laptop out there"]
         },
         {

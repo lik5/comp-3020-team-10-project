@@ -9,7 +9,7 @@ const data = {
             "batteryLife": "Up to 18 hours",
             "weight": "2.7 pounds",
             "description": "The latest iteration of Apple's ultra-portable laptop, combining a sleek design with cutting-edge performance powered by the next-generation M3 chip. The M3 chip starts the next generation of Apple silicon, with even more speed and power efficiency. You can work with more streams of 4K and 8K ProRes video with the high‑performance media engine, and keep working — or playing — all day and into the night with up to 18 hours of battery life.",
-            "price": "$1299.99",
+            "price": "$999.99",
             "reviews": ["The M3 chip delivers a significant boost in speed and efficiency", "The best ultraportable laptop out there"]
         },
         {
@@ -191,31 +191,20 @@ const data = {
     ]
 }
 
-function getObjName(url) {
-    const objInfo = url.split('?')[0].split("/");
-    return objInfo[objInfo.length - 1].replace(/-/g, " ");
-}
-
-function getObjType(url) {
-    const objInfo = url.split('?')[0].split("/");
-    return objInfo[objInfo.length - 2].replace(/-/g, " ");
-}
-
 function getObj(type, name) {
     const products = data[type];
     return products.find(product => product.name.toLowerCase() === name.toLowerCase()) || {};
 }
 
 function loadProduct() {
-    const url = window.location.href;
-    const name = getObjName(url);
-    const type = getObjType(url);
+    const name =  window.localStorage.getItem("productName");
+    const type = window.localStorage.getItem("productType");
     const obj = getObj(type, name);
 
     if (!obj) return;
 
     document.getElementById("breadcrumb").innerText = `${type.charAt(0).toUpperCase() + type.slice(1)} > ${obj.name}`;
-    document.getElementById("product-image").src = `../data/images/${name}.jpg`;
+    document.getElementById("product-image").src = `../images/${name}.jpg`;
     document.getElementById("product-name").innerText = obj.name;
     document.getElementById("product-description").innerText = obj.description || "No description available.";
     document.getElementById("product-price").innerText = obj.price || "Price unavailable.";
@@ -232,9 +221,55 @@ function loadProduct() {
 
     const reviewsContainer = document.getElementById("reviews");
     if (obj.reviews) {
-        reviewsContainer.innerHTML = obj.reviews.map(review => `<p>${review}</p>`).join("");
+        obj.reviews.map(review => renderTextcard(review));
     }
 }
+
+function renderTextcard(text, containerId = "reviews") {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        console.error(`Container with ID "${containerId}" not found!`);
+        return;
+    }
+
+    // Create the card
+    const card = document.createElement("div");
+    card.className = "card";
+
+    // Create the card text
+    const cardText = document.createElement("div");
+    cardText.className = "card-text";
+    cardText.textContent = text;
+
+    // Assemble the card
+    card.appendChild(cardText);
+
+    // Add the card to the container
+    container.insertBefore(card, container.firstChild);
+}
+
+document.getElementById("quantity-section").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const productName = window.localStorage.getItem("productName");
+    const quantity = parseInt(document.getElementById("quantity-input").value);
+
+    if (quantity <= 0) {
+        alert("Please enter a valid quantity.");
+        return;
+    }
+
+    const cart = window.localStorage.getItem(productName);
+    if (cart) {
+        let cartQuantity = parseInt(cart);
+        cartQuantity += quantity;
+        window.localStorage.setItem(productName, cartQuantity.toString());
+    } else {
+        window.localStorage.setItem(productName, quantity.toString());
+    }
+
+    // Optional: Confirm addition
+    alert(`${quantity} x ${productName} added to cart.`);
+});
 
 document.getElementById("review-form").addEventListener("submit", function(event) {
     event.preventDefault();
@@ -242,9 +277,7 @@ document.getElementById("review-form").addEventListener("submit", function(event
     const reviewsContainer = document.getElementById("reviews");
 
     if (reviewText.trim()) {
-        const newReview = document.createElement("p");
-        newReview.innerText = reviewText;
-        reviewsContainer.prepend(newReview);
+        renderTextcard(reviewText);
         document.getElementById("review-text").value = "";
     }
 });
