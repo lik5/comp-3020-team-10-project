@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (target === 'home-button') {
                 window.location.href = '../index.html';
             } else if (target === 'products-button') {
+                window.localStorage.setItem("tabProductType", "");
                 window.location.href = url.includes('index.html') ? './store/store.html' : '../store/store.html';
             } else if (target === 'cart-button') {
                 window.location.href = url.includes('index.html') ? './cart/cart.html' :'../cart/cart.html';

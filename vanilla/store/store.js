@@ -1,6 +1,14 @@
 // store.js
-
+const tabProductType = window.localStorage.getItem("tabProductType");
 let activeTab = 1;
+
+if (tabProductType === "computers") {
+    activeTab = 2;
+} else if (tabProductType === "phones") {
+    activeTab = 3;
+} else if (tabProductType === "tnd") {
+    activeTab = 4;
+}
 
 function updateTab(tabId) {
     activeTab = tabId;
@@ -23,7 +31,6 @@ function navigateTo() {
     window.location.href = "../product/product.html";
 }
 
-// Sample products
 const products = [
     {
         id: 1,
@@ -111,7 +118,7 @@ const products = [
         name: "TND Office Mouse",
         description: "TND Brand </br> <strong>45%</strong> recycled plastic",
         price: "$6.00",
-        imgSrc: "tnd mouse.jpg",
+        imgSrc: "tnd office mouse.jpg",
     },
     {
         id: 0,
@@ -165,6 +172,7 @@ function renderProducts() {
             }
             productElement.onclick = () => {
                 window.localStorage.setItem("productType", product.type);
+                window.localStorage.setItem("tabProductType", product.type);
                 window.localStorage.setItem("productName", product.name);
                 navigateTo();
             };
@@ -174,3 +182,4 @@ function renderProducts() {
 
 // Initial render
 renderProducts();
+updateTab(activeTab);
