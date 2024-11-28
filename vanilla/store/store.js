@@ -19,8 +19,8 @@ function handleDonate() {
     alert("Thank you for donating!");
 }
 
-function navigateTo(type, name) {
-    alert(`Navigating to ${type}/${name}`);
+function navigateTo() {
+    window.location.href = "../product/product.html";
 }
 
 // Sample products
@@ -36,7 +36,7 @@ const products = [
     {
         id: 2,
         type: "phones",
-        name: "Samsung Galaxy S24 <br/>Ultra",
+        name: "Samsung Galaxy S24 Ultra",
         description: "TND Recycled",
         price: "$799.00",
         imgSrc: "samsung galaxy s24 ultra.jpg",
@@ -163,7 +163,11 @@ function renderProducts() {
                     </div>
                 `;
             }
-            productElement.onclick = () => navigateTo(product.type, product.name);
+            productElement.onclick = () => {
+                window.localStorage.setItem("productType", product.type);
+                window.localStorage.setItem("productName", product.name);
+                navigateTo();
+            };
             productGrid.appendChild(productElement);
         });
 }

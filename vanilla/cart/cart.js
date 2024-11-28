@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     this.decrementBtn = this.document.querySelector("#decrement-btn");
     this.incrementBtn = this.document.querySelector("#increment-btn");
 
-    this.input.value = 1;
+    this.input.value = parseInt(window.localStorage.getItem("Apple Macbook Air M3"));
     this.input.min = 1;
 
 
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const newValue = parseInt(this.input.value || 0) + delta;
         if (newValue >= this.input.min) {
             this.input.value = newValue;
+            window.localStorage.setItem("Apple Macbook Air M3", this.input.value);
             updateQuantityPrice();
             updateButtonsState();
         }
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         this.decrementBtn.disabled = parseInt(this.input.value) <= parseInt(this.input.min);
     }
 
-    function updateQuantityPrice(price=1299.99) {
+    function updateQuantityPrice(price=999.99) {
         itemPrice.innerHTML = (this.input.value*price).toFixed(2);
         totalPrice.innerHTML = itemPrice.innerHTML;
     }

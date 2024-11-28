@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./product.css">
     <link rel="stylesheet" href="../components/num-input/num-input.css">
     <link rel="stylesheet" href="../components/nav-bar/nav-bar.css">
+    <link rel="stylesheet" href="../components/textcard/textcard.css">
 </head>
 <body>
     <div class="nav-bar">
@@ -43,9 +44,13 @@
                     <ul id="specifications"></ul>
                 </div>
             
-                <form class="quantity-section">
-                    <input type="number" id="quantity" min="1" value="1">
-                    <button class="action-button" type="submit">Add to Cart</button>
+                <form id="quantity-section">
+                    <div class="quantity-wrapper">
+                        <button type="button" class="quantity-btn" id="decrement-btn">-</button>
+                        <input type="number" id="quantity-input" value="1" min="1">
+                        <button type="button" class="quantity-btn" id="increment-btn">+</button>
+                    </div>                    
+                    <button class="action-button" id="add-to-cart-btn" type="submit">Add to Cart</button>
                 </form>
             </section>
         </div>
@@ -63,6 +68,8 @@
     <script src="../components/num-input/num-input.js"></script>
     <script src="../components/nav-bar/nav-bar.js"></script>
     <script src="../components/breadcrumb/breadcrumb.js"></script>
+    <script src="../components/textcard/textcard.js"></script>
+    <script src="../store/store.js"></script>
     <script src="./product.js"></script>
 </body>
 </html>
