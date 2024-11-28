@@ -4,7 +4,7 @@
     justify-content: space-between;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #2E7D32;
+    background-color: #1c58a7;
     border-radius: 0px 0px 10px 10px;
     align-items: center;
 }
@@ -26,10 +26,10 @@
     border-bottom-left-radius: 5px;
 }
 .nav-tabs button:hover {
-    background-color: #8C9B79;
+    background-color: #cdd7e9;
 }
 .nav-tabs button.active {
-    background-color: #8C9B79;
+    background-color: #308524;
     color: white;
 }
 .search-box {
