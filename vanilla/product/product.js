@@ -229,9 +229,8 @@ function loadProduct() {
             <li>Weight: ${obj.weight}</li>
         `;
 
-    const reviewsContainer = document.getElementById("reviews");
     if (obj.reviews) {
-        obj.reviews.map(review => renderTextcard(review, reviewsContainer));
+        obj.reviews.map(review => renderTextcard(review));
     }
 }
 

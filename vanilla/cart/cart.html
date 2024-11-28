@@ -26,12 +26,13 @@
                 <h1>Your Cart</h1>
             </div>
             <div class="cart-items">
-                <div class="cart-item">
+                <div class="cart-item" id="cartItem">
                     <img class="cart-item-image" src="../images/apple macbook air m3.jpg" alt="Apple Macbook Air M3">
                     <section class="cart-item-details">
                         <div class="cart-item-header">
                             <h1>Apple Macbook Air M3</h1>
                         </div>
+                        <button id="delete-btn" class="trash-icon">🗑️</button>
                         <div class="cart-item-quantity-price">
                             <form class="cart-item-quantity">
                                 <label for="quantity">Quantity:</label>
@@ -49,7 +50,7 @@
             <div class="cart-footer">
                 <hr />
                 <div class="cart-e-waste-recycled">
-                    <p>Your purchase today is helping to recycle <b>3.5kg</b> of e-waste!</p>
+                    <p>Your purchase today is helping to recycle <span class="amount-recycled" id="amountRecycled"></span>kg of e-waste!</p>
                 </div>
                 <span class="total-price price" id="totalPrice"></span>
                 <div class="cart-checkout-button">

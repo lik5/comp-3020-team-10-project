@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function getToggleState(url) {
         if (url.endsWith('/') || url.endsWith('index.html')) {
             return 'home-button';
-        } else if (url.includes('store.html')) {
+        } else if (url.includes('store.html') || url.includes('product.html')) {
             return 'products-button';
         } else if (url.includes('cart.html')) {
             return 'cart-button';
