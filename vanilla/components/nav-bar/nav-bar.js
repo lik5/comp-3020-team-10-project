@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function getToggleState(url) {
         if (url.endsWith('/') || url.endsWith('index.html')) {
             return 'home-button';
-        } else if (url.includes('store.html')) {
+        } else if (url.includes('store.html') || url.includes('product.html')) {
             return 'products-button';
         } else if (url.includes('cart.html')) {
             return 'cart-button';
@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (target === 'home-button') {
                 window.location.href = '../index.html';
             } else if (target === 'products-button') {
+                window.localStorage.setItem("tabProductType", "");
                 window.location.href = url.includes('index.html') ? './store/store.html' : '../store/store.html';
             } else if (target === 'cart-button') {
                 window.location.href = url.includes('index.html') ? './cart/cart.html' :'../cart/cart.html';

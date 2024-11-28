@@ -1,3 +1,10 @@
+function loadState() {
+    const quantity = parseInt(window.localStorage.getItem("Apple Macbook Air M3"));
+    if (!quantity || quantity <= 0) {
+        document.getElementById("cartItem").style.visibility="hidden";
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     // Add event listener for checkout button
     const checkoutButton = document.querySelector(".checkout-button");
@@ -5,49 +12,66 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Proceeding to checkout...");
     });
 
-    this.input = this.document.querySelector("#quantity-input");
-    this.decrementBtn = this.document.querySelector("#decrement-btn");
-    this.incrementBtn = this.document.querySelector("#increment-btn");
+    const deleteButton = document.getElementById("delete-btn");
+    deleteButton.addEventListener("click", () => {
+        window.localStorage.removeItem("Apple Macbook Air M3");
+        loadState();
+        updateQuantityPrice(0);
+        updateRecycledAmount(0);
+    });
 
-    this.input.value = parseInt(window.localStorage.getItem("Apple Macbook Air M3"));
-    this.input.min = 1;
+    const input = document.querySelector("#quantity-input");
+    const decrementBtn = document.querySelector("#decrement-btn");
+    const incrementBtn = document.querySelector("#increment-btn");
+
+    input.value = parseInt(window.localStorage.getItem("Apple Macbook Air M3")) || 0;
+    input.min = 1;
 
 
     const itemPrice = document.querySelector(".item-price");
     const totalPrice = document.querySelector(".total-price");
+    const amountRecycled = document.querySelector(".amount-recycled");
 
     function changeValue(delta) {
-        const newValue = parseInt(this.input.value || 0) + delta;
-        if (newValue >= this.input.min) {
-            this.input.value = newValue;
-            window.localStorage.setItem("Apple Macbook Air M3", this.input.value);
+        const newValue = parseInt(input.value || 0) + delta;
+        if (newValue >= input.min) {
+            input.value = newValue;
+            window.localStorage.setItem("Apple Macbook Air M3", input.value);
             updateQuantityPrice();
+            updateRecycledAmount();
+            updateRecycledAmount();
             updateButtonsState();
         }
     }
 
     function validateInput() {
-        const value = parseInt(this.input.value) || 0;
-        if (value < this.input.min) {
-            this.input.value = this.input.min;
+        const value = parseInt(input.value) || 0;
+        if (value < input.min) {
+            input.value = input.min;
         }
         updateButtonsState();
     }
 
     function updateButtonsState() {
-        this.decrementBtn.disabled = parseInt(this.input.value) <= parseInt(this.input.min);
+        decrementBtn.disabled = parseInt(input.value) <= parseInt(input.min);
     }
 
     function updateQuantityPrice(price=999.99) {
-        itemPrice.innerHTML = (this.input.value*price).toFixed(2);
+        itemPrice.innerHTML = (input.value*price).toFixed(2);
         totalPrice.innerHTML = itemPrice.innerHTML;
     }
 
+    function updateRecycledAmount(amount=3.5) {
+        amountRecycled.innerHTML = (input.value*amount).toFixed(1);
+    }
 
     updateButtonsState();
     updateQuantityPrice();
+    updateRecycledAmount();
 
-    this.incrementBtn.addEventListener("click", () => changeValue(1));
-    this.decrementBtn.addEventListener("click", () => changeValue(-1));
-    this.input.addEventListener("input", () => validateInput());
+    incrementBtn.addEventListener("click", () => changeValue(1));
+    decrementBtn.addEventListener("click", () => changeValue(-1));
+    input.addEventListener("input", () => validateInput());
 });
+
+loadState();

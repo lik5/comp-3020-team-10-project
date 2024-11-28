@@ -188,6 +188,15 @@ const data = {
         "batteryLife": "Up to 24 hours",
         "weight": "7.9 ounces"
         }
+    ],
+    "tnd": [
+        {
+        "name": "TND Office Mouse",
+        "weight": "80 grams",
+        "description": "TND Brand 45% recycled plastic",
+        "price": "$6.00",
+        "reviews": []
+        },
     ]
 }
 
@@ -203,29 +212,29 @@ function loadProduct() {
 
     if (!obj) return;
 
-    document.getElementById("breadcrumb").innerText = `${type.charAt(0).toUpperCase() + type.slice(1)} > ${obj.name}`;
+    createBreadcrumb(type, name);
     document.getElementById("product-image").src = `../images/${name}.jpg`;
     document.getElementById("product-name").innerText = obj.name;
     document.getElementById("product-description").innerText = obj.description || "No description available.";
     document.getElementById("product-price").innerText = obj.price || "Price unavailable.";
 
     const specs = document.getElementById("specifications");
-    specs.innerHTML = `
-        <li>Processor: ${obj.processor}</li>
-        <li>RAM: ${obj.ram}</li>
-        <li>Storage: ${obj.storage}</li>
-        <li>Display: ${obj.display}</li>
-        <li>Battery Life: ${obj.batteryLife}</li>
-        <li>Weight: ${obj.weight}</li>
-    `;
+    specs.innerHTML = type === "tnd" ? `<li>Weight: ${obj.weight}</li>` 
+        : `
+            <li>Processor: ${obj.processor}</li>
+            <li>RAM: ${obj.ram}</li>
+            <li>Storage: ${obj.storage}</li>
+            <li>Display: ${obj.display}</li>
+            <li>Battery Life: ${obj.batteryLife}</li>
+            <li>Weight: ${obj.weight}</li>
+        `;
 
-    const reviewsContainer = document.getElementById("reviews");
     if (obj.reviews) {
         obj.reviews.map(review => renderTextcard(review));
     }
 }
 
-function renderTextcard(text, containerId = "reviews") {
+function renderTextcard(text, containerId="reviews") {
     const container = document.getElementById(containerId);
     if (!container) {
         console.error(`Container with ID "${containerId}" not found!`);
