@@ -36,7 +36,7 @@ const products = [
         id: 1,
         type: "computers",
         name: "Apple Macbook Air M3",
-        description: "Renewed",
+        description: "TND Recycled",
         price: "$999.99",
         imgSrc: "apple macbook air m3.jpg",
     },
@@ -54,7 +54,7 @@ const products = [
         name: "Google Chromebook",
         description: "Used",
         price: "$223.50",
-        imgSrc: "",
+        imgSrc: "chromebook.jpg",
     },
     {
         id: 4,
@@ -62,7 +62,7 @@ const products = [
         name: "Google Pixel 8",
         description: "Used",
         price: "$599.00",
-        imgSrc: "",
+        imgSrc: "pixel8.jpg",
     },
     {
         id: 5,
@@ -70,15 +70,15 @@ const products = [
         name: "Lenovo Thinkpad",
         description: "TND Recycled",
         price: "$150.12",
-        imgSrc: "",
+        imgSrc: "thinkpad.jpg",
     },
     {
         id: 6,
         type: "phones",
-        name: "Samsung Galaxy S9",
+        name: "Samsung Galaxy S9+",
         description: "TND Recycled",
         price: "$194.99",
-        imgSrc: "",
+        imgSrc: "s9+.jpg",
     },
     {
         id: 7,
@@ -86,7 +86,7 @@ const products = [
         name: "Samsung Galaxy S9",
         description: "Renewed",
         price: "$230.99",
-        imgSrc: "",
+        imgSrc: "s9.jpg",
     },
     {
         id: 8,
@@ -94,7 +94,7 @@ const products = [
         name: "Lenovo Yoga",
         description: "Used",
         price: "$463.99",
-        imgSrc: "",
+        imgSrc: "yoga.jpg",
     },
     {
         id: 9,
@@ -102,7 +102,7 @@ const products = [
         name: "Samsung Galaxy S9",
         description: "TND Recycled",
         price: "$194.99",
-        imgSrc: "",
+        imgSrc: "s9.jpg",
     },
     {
         id: 0,
@@ -119,7 +119,7 @@ const products = [
         description: "TND Brand </br> <strong>80%</strong> recycled plastic",
         price: "$12.10",
         imgSrc: "tnd keyboard.png",
-    }
+    },
     // Add more products as needed
 ];
 

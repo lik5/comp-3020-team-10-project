@@ -10,8 +10,8 @@ const data = {
             "weight": "2.7 pounds",
             "description": "The latest iteration of Apple's ultra-portable laptop, combining a sleek design with cutting-edge performance powered by the next-generation M3 chip. The M3 chip starts the next generation of Apple silicon, with even more speed and power efficiency. You can work with more streams of 4K and 8K ProRes video with the high‑performance media engine, and keep working — or playing — all day and into the night with up to 18 hours of battery life.",
             "price": "$999.99",
-            "condition": "Renewed",
-            "reviews": ["The M3 chip delivers a significant boost in speed and efficiency", "The best ultraportable laptop out there"]
+            "condition": "TND Recycled",
+            "reviews": ["I was a bit hesitant at first, but I’m really impressed with this laptop! It looks and performs like new. What really impressed me was that the battery had been replaced, and it works great! The condition is excellent, with no visible scratches or dents.", "Great value for the price!", "The best ultraportable laptop out there", "Looks just like brand new. Minor wear on the surface. TND said they replaced the batteries on this one and it's working great so far."]
         },
         {
             "name": "Asus Zenbook 14 OLED (UM3406)",
@@ -195,7 +195,7 @@ const data = {
         {
         "name": "TND Office Mouse",
         "weight": "80 grams",
-        "description": "45% recycled plastic",
+        "description": "Simple and stylish mouse. Made from 45% recycled plastic.",
         "price": "$6.00",
         "condition": "TND Brand",
         "reviews": []
