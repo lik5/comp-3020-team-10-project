@@ -1,13 +1,19 @@
 @import url("./global.css");
+p{
+    font-size: 20px;
+}
 
 .logo {
     width:245px;
 }
 body {
     font-family: Arial, sans-serif;
+    font-size: large;
     margin: 0;
     padding: 0;
     text-align: left;
+    color: #2c2c2c;
+    background-color: #edf0f3;
 }
 
 header {
@@ -17,6 +23,35 @@ header {
 section {
     margin-bottom: 20px;
     text-align: center;
+}
+
+#about{
+    width: 1000px;
+    margin: 0 auto; /* centers the about section*/
+}
+#why-donate{
+    max-width: 70%;
+    margin: 0 auto; 
+    padding: 10px;
+    border-radius: 8px;  
+}
+#why-donate p {
+    font-size: 20px;
+}
+#why-donate ul {
+    text-align: left;
+}
+#why-donate li {
+    font-size: 22px;
+    margin: 10px 0;
+    color: #1f1e1e;
+}
+#why-donate strong {
+    color: #0d7c27; 
+}
+#why-donate-container {
+    background-color: #d5e0ec; 
+
 }
 .categories {
     display: grid;
@@ -40,6 +75,7 @@ section {
 }
 .donate {
     margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 
