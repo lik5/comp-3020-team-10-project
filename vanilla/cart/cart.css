@@ -81,3 +81,17 @@
 .trash-icon {
     margin-left: 8px;
 }
+
+#checkout-gif{
+    width: 50%;
+}
+.modal {
+    border: 0;
+    width: 50%;
+    text-align: center;
+}
+.modal::backdrop{
+    background-color: gray;
+    opacity: .4;
+    
+}

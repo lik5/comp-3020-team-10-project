@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Add event listener for checkout button
     const checkoutButton = document.querySelector(".checkout-button");
     checkoutButton.addEventListener("click", () => {
-        alert("Proceeding to checkout...");
+        // alert("Proceeding to checkout...");
+        const modal = document.querySelector('#modal');
+        modal.showModal();
     });
 
     const deleteButton = document.getElementById("delete-btn");
