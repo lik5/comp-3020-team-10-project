@@ -22,3 +22,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+// For incrementing the counter
+function startCount()
+{
+    setInterval(incrementCount, 1230)
+}
+function incrementCount()
+{
+    
+    var x = document.getElementById("recycle-count");
+
+    string = x.innerHTML.split(' ')[0];
+    counter = parseInt(string);
+    counter += 8;
+    if (Math.floor(Math.random() * 2) + 1 == 1)
+    {
+        counter+=1
+        x.innerHTML = counter + " kg";
+
+    }
+
+}
