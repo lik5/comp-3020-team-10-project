@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="./components/nav-bar/nav-bar.css">
 </head>
-<body>
+<body onload="startCount()">
     <div class="nav-bar">
         <div class="logo">TechNeverDies</div>
         <div class="search-box">
@@ -33,8 +33,10 @@
                 should ever truly "die," and by<br>repurposing materials, we aim to give them a second life while conserving natural 
                 resources.
             </p>
-            <p>Total e-waste recycled: <strong>9,654 kg</strong></p>
-            <button class="donate action-button" onclick="handleDonate()">Donate</button>
+            <div id="donate-ad">
+                <p>Total e-waste recycled: <strong id="recycle-count">9954 kg</strong></p>
+                <button class="donate action-button" onclick="handleDonate()">Donate</button>
+            </div>
         </section>
         <section id="products">
             <h2>Shop by Category</h2>
