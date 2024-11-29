@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./product.css">
     <link rel="stylesheet" href="../components/num-input/num-input.css">
     <link rel="stylesheet" href="../components/nav-bar/nav-bar.css">
+    <link rel="stylesheet" href="../components/breadcrumb/breadcrumb.css">
     <link rel="stylesheet" href="../components/textcard/textcard.css">
 </head>
 <body>
@@ -22,7 +23,7 @@
         </div>
     </div>
     <div class="container">
-        <div id="breadcrumb"></div>
+        <ul id="breadcrumb" class="breadcrumb"></ul>
         <div class="product">
             <section class="product-section">
                 <div class="product-image">
@@ -33,6 +34,7 @@
             <section class="product-details">
                 <div class="product-header">
                     <h1 id="product-name"></h1>
+                    <h3 id="product-condition"></h3>
                 </div>
                 <div class="product-description item-description">
                     <p id="product-description"></p>
@@ -41,13 +43,13 @@
 
                 <div class="product-components">
                     <h2>Specifications</h2>
-                    <ul id="specifications"></ul>
+                    <ul id="specifications" class="specifications"></ul>
                 </div>
             
-                <form id="quantity-section">
+                <form id="quantity-section" class="quantity-section">
                     <div class="quantity-wrapper">
                         <button type="button" class="quantity-btn" id="decrement-btn">-</button>
-                        <input type="number" id="quantity-input" value="1" min="1">
+                        <input type="number" class="quantity-input" id="quantity-input" onblur="validateInput()" value="1" min="1">
                         <button type="button" class="quantity-btn" id="increment-btn">+</button>
                     </div>                    
                     <button class="action-button" id="add-to-cart-btn" type="submit">Add to Cart</button>

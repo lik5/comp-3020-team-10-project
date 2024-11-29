@@ -32,27 +32,27 @@
                         <div class="cart-item-header">
                             <h1>Apple Macbook Air M3</h1>
                         </div>
-                        <button id="delete-btn" class="trash-icon">🗑️</button>
                         <div class="cart-item-quantity-price">
                             <form class="cart-item-quantity">
                                 <label for="quantity">Quantity:</label>
                                 <div class="quantity-wrapper">
                                     <button type="button" class="quantity-btn" id="decrement-btn">-</button>
-                                    <input type="number" id="quantity-input" value="1" min="1">
+                                    <input type="number" class="quantity-input" id="quantity-input" onblur="validateInput()" value="1" min="1">
                                     <button type="button" class="quantity-btn" id="increment-btn">+</button>
                                 </div>                                
+                                <button id="delete-btn" class="trash-icon">🗑️</button>
                             </form>
-                            <span class="item-price price" id="itemPrice"></span>
                         </div>
                     </section>
+                    <span class="item-price price-normal" id="itemPrice"></span>
                 </div>
             </div>
+            <hr />
             <div class="cart-footer">
-                <hr />
                 <div class="cart-e-waste-recycled">
-                    <p>Your purchase today is helping to recycle <span class="amount-recycled" id="amountRecycled"></span>kg of e-waste!</p>
+                    <p>Your purchase today is helping to recycle <span class="amount-recycled" id="amountRecycled"></span> kg of e-waste!</p>
                 </div>
-                <span class="total-price price" id="totalPrice"></span>
+                <span class="total-price price-normal" id="totalPrice"></span>
                 <div class="cart-checkout-button">
                     <button class="checkout-button action-button" type="button">Checkout</button>
                 </div>
@@ -61,10 +61,10 @@
     </div>
     <dialog class="modal" id="modal">
         <h3>Thank you for your purchase</h3>
-        <p>You just helped recycle <strong>3 kg</strong> of e-waste</p>
+        <p>You just helped recycle <span class="amount-recycled" id="amountRecycledModal"></span> kg of e-waste</p>
         <img id="checkout-gif" src="../images/E-Waste.gif" alt="">
         <p>Thanks to people like you, TechNeverDies has recycled a total of <strong>10234 kg</strong> of e-waste to date!</p>
-        <button class="checkout-button action-button" type="button">Continue Shopping</button>
+        <button class="action-button" type="button" id="continueShopBtn">Continue Shopping</button>
     </dialog>
     <script src="../components/nav-bar/nav-bar.js"></script>
     <script src="./cart.js"></script>

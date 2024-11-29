@@ -22,6 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
         updateRecycledAmount(0);
     });
 
+    const continueShopButton = document.getElementById("continueShopBtn");
+    continueShopButton.addEventListener("click", () => {
+        window.localStorage.removeItem("Apple Macbook Air M3");
+        const url = window.location.href;
+        window.location.href = url.includes('index.html') ? './index.html' : '../index.html';
+    });
+
     const input = document.querySelector("#quantity-input");
     const decrementBtn = document.querySelector("#decrement-btn");
     const incrementBtn = document.querySelector("#increment-btn");
@@ -33,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const itemPrice = document.querySelector(".item-price");
     const totalPrice = document.querySelector(".total-price");
     const amountRecycled = document.querySelector(".amount-recycled");
+    const amountRecycledModal = document.getElementById("amountRecycledModal");
 
     function changeValue(delta) {
         const newValue = parseInt(input.value || 0) + delta;
@@ -51,6 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (value < input.min) {
             input.value = input.min;
         }
+        updateQuantityPrice();
+        updateRecycledAmount();
+        updateRecycledAmount();
         updateButtonsState();
     }
 
@@ -65,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateRecycledAmount(amount=3.5) {
         amountRecycled.innerHTML = (input.value*amount).toFixed(1);
+        amountRecycledModal.innerHTML = amountRecycled.innerHTML;
     }
 
     updateButtonsState();
@@ -73,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     incrementBtn.addEventListener("click", () => changeValue(1));
     decrementBtn.addEventListener("click", () => changeValue(-1));
-    input.addEventListener("input", () => validateInput());
+    input.addEventListener("blur", () => validateInput());
 });
 
 loadState();

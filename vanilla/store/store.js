@@ -98,14 +98,6 @@ const products = [
     },
     {
         id: 9,
-        type: "computers",
-        name: "Apple Macbook Air M3",
-        description: "Used",
-        price: "$647.98",
-        imgSrc: "apple macbook air m3.jpg"
-    },
-    {
-        id: 10,
         type: "phones",
         name: "Samsung Galaxy S9",
         description: "TND Recycled",

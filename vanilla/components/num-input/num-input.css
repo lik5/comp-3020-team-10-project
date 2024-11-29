@@ -25,16 +25,20 @@
     transition: background-color 0.3s;
 }
 
+.quantity-btn:disabled, .quantity-btn:hover:disabled{
+    background-color: #EBEBE4;
+    cursor: default;
+}
+
 .quantity-btn:hover {
     background-color: #0056b3;
 }
 
-#quantity-input {
+.quantity-input {
     width: 60px;
     height: 40px;
     text-align: center;
     font-size: 16px;
-    padding: 5px;
     border: none;
 }
 

@@ -31,5 +31,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     this.incrementBtn.addEventListener("click", () => changeValue(1));
     this.decrementBtn.addEventListener("click", () => changeValue(-1));
-    this.input.addEventListener("input", () => validateInput());
+    this.input.addEventListener("blur", () => validateInput());
 });
