@@ -2,9 +2,11 @@
 p{
     font-size: 20px;
 }
-
+/* TechNeverDies logo */
 .logo {
     width:245px;
+    font-size: 25px;
+    color: #edf0f3;
 }
 body {
     font-family: Arial, sans-serif;
