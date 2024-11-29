@@ -25,4 +25,5 @@
 - Search bar and Filter brands functionality not implemented
 - Can only add "Apple Macbook Air M3" to the cart, but may visit other products
  
-
+- **Bugs**
+  - There is a bug in the storefront page where the spacing of the products changes when switching product tabs
