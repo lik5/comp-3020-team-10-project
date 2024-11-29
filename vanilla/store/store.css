@@ -15,6 +15,7 @@ p{
 .ad{
     background-color: #2683cf81;
     padding: 10px;
+    border-radius: 5px;
 }
 .filter-header {
     border-bottom: 1px solid #575757;
@@ -117,6 +118,7 @@ border: 1px groove;
 box-shadow:  0px 0px 5px #575757;
 background-color: white;
 height: 310px;
+width: 240px;
 border-radius: 5px;
 overflow: hidden;
 text-align: center;
@@ -174,4 +176,7 @@ font-size: 20px;
     
     font-size: 15px;
     color: green;
+}
+.store-donate-button {
+    text-align: center;
 }

@@ -1,8 +1,14 @@
 /* nav-bar.css */
+.logo {
+    width:245px;
+    font-size: 25px;
+    color: #edf0f3;
+    cursor: pointer;
+  }
 .nav-bar {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 20px 50px 20px 50px;
     margin-bottom: 20px;
     background-color: #1c58a7;
     border-radius: 0px 0px 10px 10px;
@@ -29,7 +35,7 @@
     background-color: #cdd7e9;
 }
 .nav-tabs button.active {
-    background-color: #308524;
+    background-color: #2fbe1c;
     color: white;
 }
 .search-box {

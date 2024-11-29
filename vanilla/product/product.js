@@ -10,6 +10,7 @@ const data = {
             "weight": "2.7 pounds",
             "description": "The latest iteration of Apple's ultra-portable laptop, combining a sleek design with cutting-edge performance powered by the next-generation M3 chip. The M3 chip starts the next generation of Apple silicon, with even more speed and power efficiency. You can work with more streams of 4K and 8K ProRes video with the high‑performance media engine, and keep working — or playing — all day and into the night with up to 18 hours of battery life.",
             "price": "$999.99",
+            "condition": "Renewed",
             "reviews": ["The M3 chip delivers a significant boost in speed and efficiency", "The best ultraportable laptop out there"]
         },
         {
@@ -114,6 +115,7 @@ const data = {
         "weight": "8.3 ounces",
         "description": "The Samsung Galaxy S24 Ultra is the ultimate powerhouse in Samsung’s flagship lineup, combining cutting-edge technology, premium design, and industry-leading performance.",
         "price": "$1199.99",
+        "condition": "TND Recycled",
         "reviews": []
         },
         {
@@ -193,8 +195,9 @@ const data = {
         {
         "name": "TND Office Mouse",
         "weight": "80 grams",
-        "description": "TND Brand 45% recycled plastic",
+        "description": "45% recycled plastic",
         "price": "$6.00",
+        "condition": "TND Brand",
         "reviews": []
         },
     ]
@@ -215,6 +218,7 @@ function loadProduct() {
     createBreadcrumb(type, name);
     document.getElementById("product-image").src = `../images/${name}.jpg`;
     document.getElementById("product-name").innerText = obj.name;
+    document.getElementById("product-condition").innerText = obj.condition;
     document.getElementById("product-description").innerText = obj.description || "No description available.";
     document.getElementById("product-price").innerText = obj.price || "Price unavailable.";
 
