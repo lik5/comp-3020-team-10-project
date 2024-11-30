@@ -5,12 +5,13 @@
 - Tristan Saloranta
 - Christian Javen Samson
 
-### To access the website
+### To access the website (not required)
 - Visit: https://github.com/lik5/comp-3020-team-10-project/tree/main/vanilla
 - Clone the repo by running "git clone https://github.com/lik5/comp-3020-team-10-project.git" in the command line
 
 ### How to start the website
 - To run the website, click the `index.html` file. This will open the website's homepage
+    - The `index.html` is located inside the `vanilla` folder
 - **Note**: *The website will not function well on Linux and Firefox browser*
     - Please use **Chrome** on **Windows** to run the website
 
