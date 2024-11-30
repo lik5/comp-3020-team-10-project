@@ -22,6 +22,6 @@
             - Plastic Bottles, Batteries, Electronic Gadgets, or other
         - User selects an option and inputs the name of the item that will be donated.
         - A popup message saying "Donation successful. Thank you for being a part of our mission"
-- Search bar and Filter brands functionality not implemented
+- Search bar and Filter brands functionality unable to be implemented
 - **You can only add "Apple Macbook Air M3" (the first item) to the cart, but may visit other products**
     - Note that the descriptions for other products has not been implemented
